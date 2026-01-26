@@ -1,0 +1,312 @@
+
+
+body{
+    color:#30333f;
+}
+
+/*################################# UTILITY CLASSES ######################################### */
+
+.container{
+    display:flex;
+    width:90%;
+    height:100%;
+    align-items:center;
+    margin:0 auto;
+}
+
+.heading{
+    font-size:3rem;
+}
+/* button */
+.btn{
+    display:inline-block;
+    border-radius:7px;
+    font-size:1.2rem;
+    text-align:center;
+}
+/* for shadow */
+.shadow{
+    box-shadow:none;
+}
+.shadow:hover{
+box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.box-shadow{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    scale:1;
+}
+.box-shadow:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    scale:1.01;
+}
+
+/* box unique radius */
+.unique-radius{
+    border-radius:40px 2px 40px 100px;
+}
+.re-unique-radius{
+    border-radius:2px 40px 100px 40px; 
+}
+
+/* input boxes  */
+input,textarea{
+    outline:none
+}
+
+/* fade at bottom */
+.fadeIn{
+    mask-image:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+/* for rotation */
+.rotate{
+    transform-style:preserve-3d;
+    transform:perspective(800px) rotateY(0deg) translateY(0);
+}
+.rotate:hover{
+    transform:rotateY(180deg) translateY(-20px);
+}
+
+
+/* ####### hamburger line ########### */
+#hamburger{
+    display:none;
+    width:30px;
+    height:20px;
+    position:relative;
+    z-index:4;
+}
+#hamburger label,input[type='checkbox']{
+    position:absolute;
+}
+#hamburger input[type='checkbox']{visibility:hidden;}
+#hamburger label{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:100%;
+    height:100%;
+    z-index:2;
+}
+#hamburger label .lines{
+    width:30px;
+    height:2px;
+    background:black;
+    border-radius:20px;
+    transform-origin:left;
+    transform:rotate(0deg);
+    transition:transform .3s;
+}
+#hamburger input[type='checkbox']:checked + label .line1{
+    transform:rotate(38deg);
+}
+#hamburger input[type='checkbox']:checked + label .line2{
+    transform:translateX(100px);
+}
+#hamburger input[type='checkbox']:checked + label .line3{
+    transform:rotate(-38deg);
+}
+
+
+/* ######################################  ANIMATION CLASSES  ################################### */
+
+/* hero text animation */
+span{
+    display:inline-block;
+    position:relative;
+    color:transparent;
+}
+#hero-text-box a{
+    margin-right:10px;
+    min-width:5rem;
+    opacity:0;
+    animation: fadeOut .5s 3s forwards;
+}
+#hero-text span::before{
+    content:'';
+    position:absolute;
+    z-index:1;
+    width:100%;
+    height:100%;
+    transform:scaleX(0);
+    transform-origin:left;
+    background-color:#30333f;
+}
+
+/* first span animation */
+#hero-text #span1::before{
+    animation:slideTxtHover .5s forwards,exitTxtHover .5s .5s forwards;
+}
+#span1{
+    animation:txtVisible .7s .5s forwards;
+}
+
+/* second span animation */
+#hero-text #span2::before{
+    animation:slideTxtHover .5s 1s forwards,exitTxtHover .5s 1.5s forwards;
+}
+#span2{
+    animation:txtVisible .7s 1.5s forwards;
+}
+
+/* third span animation */
+#hero-text #span3::before{
+    animation:slideTxtHover .5s 2s forwards,exitTxtHover .5s 2.5s forwards;
+}
+#span3{
+    animation:txtVisible .7s 2.5s forwards;
+}
+
+@keyframes slideTxtHover{
+    0%{transform:scaleX(0);}
+    100%{transform:scaleX(1);}
+}
+@keyframes exitTxtHover{
+    0%{transform:scaleX(1);transform-origin:right;}
+    100%{transform:scaleX(0);transform-origin:right;}
+}
+@keyframes txtVisible{
+    0%{color:transparent}
+    100%{color:#30333f;}
+}
+/* opacity */
+@keyframes fadeOut{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/*######################################### media query ####################################### */
+
+/* 1280px */
+@media screen and (max-width:1280px){
+    #services{
+        height: auto !important;
+        padding:30px;
+    }
+    #services h1{
+        margin-bottom:40px;
+    }
+}
+
+/* 1200px  */
+@media screen and (max-width:1200px){
+    #hero-text{
+        font-size:3.8rem !important;
+    }
+    #hero-img-box{
+        scale:.8;
+    }
+}
+
+/* 1140px for about profile */
+@media screen and (max-width:1140px){
+    #about-profile-box{
+        scale:.8;
+    }
+}
+
+/* 1080px */
+@media screen and (max-width:1080px){
+    #works{
+        height: auto !important;
+        padding:30px;
+    }
+    #works h1{
+        margin-bottom:40px;
+    }
+}
+/* 1000px */
+@media screen and (max-width:1000px){
+    #hero-text{
+        font-size:3rem !important;
+    }
+    #hero-img-box{
+        scale:.7;
+    }
+}
+
+/* 900px */
+@media screen and (max-width:900px){
+    #home > div{
+        justify-content:center !important;
+    }
+    #hero-text{
+        font-size:2.5rem !important;
+    }
+    #hero-img-box{
+        scale:.5;
+    }
+    #hero-img-box > div{
+        width:100% !important;
+    }
+    #hero-text-box a{
+        width:100px !important;
+    }
+}
+
+/* 740px  */
+@media screen and (max-width:740px){
+    #home > div{
+        flex-direction:column;
+        align-items:center;
+        flex-gap:-20px;
+    }
+    #hero-text-box{order:2; margin-top:-70px;}
+    #hero-img-box{margin-top:-5 0px;}
+
+    #contact .container > div{
+        flex-direction:column;
+        align-items:center;
+    }
+    #contact .container > div > div{
+        width:100%;
+        margin-bottom:40px;
+    }
+}
+
+/* 670px about section */
+@media screen and (max-width:670px){
+    #about{
+        height:auto !important;
+        padding-bottom:20px ;
+    }
+    #about .container > div #about-desc{
+        width:100%;
+    }
+    /* navigation sidebar hamburger */
+    #hamburger{display:block}
+    header ul{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:2;
+        flex-direction:column;
+        width:100vw;
+        height:100vh;
+        align-items:center;
+        justify-content:center;
+        background:rgba(255,255,255,0.8);
+        backdrop-filter:blur(3px);
+
+    transform:translateX(100%);
+       transition:transform .3s;
+    }
+}
+
+/* 400px */
+
+@media screen and (max-width:400px){
+    .container{
+        widht:100%;
+    }
+    .heading{
+    font-size:2.4rem;
+}
+    #works .container >div > div{
+        width:100%;
+        height:250px;
+    }
+    #services .container > div > div{
+        width:100% !important;
+    }
+}
