@@ -40,10 +40,10 @@ function Contact() {
                         <p>(+91) 9996397190</p>
                     </div>
                     <div className='flex gap-3 '>
-                        <a href='https://www.linkedin.com/in/ishu-z' target='_blank'><FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-[#0077b5] hover:translate-y-[-5px] duration-300" /></a>
+                        <a href='https://www.linkedin.com/in/ishu-zx' target='_blank'><FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-[#0077b5] hover:translate-y-[-5px] duration-300" /></a>
                         <a href='https://github.com/Ishu-zx' target='_blankk'><FontAwesomeIcon icon={faGithub} className="text-2xl hover:text-black hover:translate-y-[-5px] duration-300" /></a>
-                        <a href='#'><FontAwesomeIcon icon={faInstagram} className="text-2xl hover:text-[#833AB4] hover:translate-y-[-5px] duration-300" /></a>
-                        <a href='#'><FontAwesomeIcon icon={faXTwitter} className="text-2xl hover:text-black hover:translate-y-[-5px] duration-300" /></a>
+                        <a href='#' title='Available Soon'><FontAwesomeIcon icon={faInstagram} className="text-2xl hover:text-[#833AB4] hover:translate-y-[-5px] duration-300" /></a>
+                        <a href='#' title='Available Soon'><FontAwesomeIcon icon={faXTwitter} className="text-2xl hover:text-black hover:translate-y-[-5px] duration-300" /></a>
                     </div>
                 </div>
                 <div className='w-[50%]'>
